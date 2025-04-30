@@ -1,5 +1,6 @@
 package com.baont.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -24,5 +25,6 @@ public class Video {
     private LocalDateTime createdAt = LocalDateTime.now();
 
     @OneToMany(mappedBy = "video", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Comment> comments;
 }
