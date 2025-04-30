@@ -25,10 +25,18 @@ const VideoPlayer = () => {
       {videos.map((video) => (
         <div key={video.id} style={{ marginBottom: "30px" }}>
           <h4>{video.caption}</h4>
+          <h5>Upload by: {video.user.fullName}</h5>
           <video width="640" height="360" controls>
             <source src={video.videoUrl} type="video/mp4" />
             Trình duyệt của bạn không hỗ trợ thẻ video.
           </video>
+          <div>
+            <h5>Comment:</h5>
+            <ul>
+                
+            </ul>
+          </div>
+          <hr></hr>
         </div>
       ))}
     </div>
