@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Video Test</title>
+</head>
+<body>
+
+<h1 th:text="${video != null ? video.caption : 'Không có video nào'}">Video caption</h1>
+
+<video width="640" height="360" controls th:if="${video != null}">
+    <source th:src="@{${video.videoUrl}}" type="video/mp4">
+    Trình duyệt của bạn không hỗ trợ thẻ video.
+</video>
+
+<form th:action="@{/video-test}" method="post">
+    <input type="text" name="id" placeholder="Nhập ID video">
+    <button type="submit">Tìm</button>
+</form>
+
+</body>
+</html>
